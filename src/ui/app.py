@@ -19,21 +19,22 @@ You can run it in the terminal as follows:
 # #############################################################################
 # IMPORTS
 # #############################################################################
+import base64
 import streamlit as st
 import folium
 from streamlit_folium import st_folium
 import pandas as pd
 from app_marker_generator import generate_popup_html
-
-
+import app_projects
+from app_banner import generate_banner
 
 
 # #############################################################################
 # STREAMLIT PAGE CONFIGRUATION
 # #############################################################################
+
     # Streamlit page config
 st.set_page_config(layout="wide")
-st.title("🌞 Mr Sunshine India 🇮🇳: Mapping India’s Solar Infrastructure 🌞")
 
 
 
@@ -51,58 +52,142 @@ data = load_data()
 
 
 # #############################################################################
-# VISUAL ELEMENTS
+# USER INTERFACE LAYOUT
 # #############################################################################    
 
-# Define tab names
+# ########### BANNER
+generate_banner()
+
+# ########### TABS
 tab_names = [
-    "Overview",
-    "Current Projects",
-    "Opportunities"
+    "🗺️ Projects Overview",
+    "☀️ Solar Potential Explorer",
+    "💰 Investment Navigator",
+    "📄 Tender Navigator"
 ]
 tabs = st.tabs(tab_names)
 
-# Example: create a different map for each tab
-for i, tab in enumerate(tabs):
-    with tab:
-        # Sidebar-like filters per tab
-        st.header(f"🔍 Filter Projects ({tab_names[i]})")
-        # You can customize filters per tab if needed
+# ########### PROJECTS OVERVIEW
+i = 0
+with tabs[0]:
+    col1, col2 = st.columns([2, 5])  # Adjust the ratio as needed
+
+    # Filter Pane
+    with col1:
+        st.header(f"🔍 Filter Projects")
         states = st.multiselect("State", data['state'].unique(), default=data['state'].unique(), key=f"state_{i}")
         types = st.multiselect("Type", data['type'].unique(), default=data['type'].unique(), key=f"type_{i}")
         techs = st.multiselect("Technology", data['technology'].unique(), default=data['technology'].unique(), key=f"tech_{i}")
         bifacial = st.radio("Bifacial Modules", ["All", "Yes", "No"], index=0, key=f"bifacial_{i}")
 
-        # Filter data for each tab (optional: filter by tab type)
-        filtered = data[
-            data['state'].isin(states) &
-            data['type'].isin(types) &
-            data['technology'].isin(techs)
-        ]
-        if bifacial != "All":
-            filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]
+    # Filtering must be done outside the columns (so both columns can use the result)
+    filtered = data[
+        data['state'].isin(states) &
+        data['type'].isin(types) &
+        data['technology'].isin(techs)
+    ]
+    if bifacial != "All":
+        filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]
 
-        # Optionally, further filter by tab (e.g., only show utility-scale in tab 0)
-        # Example:
-        # if i == 0:
-        #     filtered = filtered[filtered['project_category'] == "utility"]
-        # elif i == 1:
-        #     filtered = filtered[filtered['project_category'] == "rooftop"]
-        # elif i == 2:
-        #     filtered = filtered[filtered['project_category'] == "park"]
+    # Map
+    with col2:
+        app_projects.generate_map(i, filtered, st_folium)
 
-        # Create a map for each tab
+# ########### SOLAR POTENTIAL EXPLORER
+i = 1
+with tabs[1]:
+    # Create two columns: left for filters, right for map
+    col1, col2 = st.columns([1, 3])  # Adjust the ratio as needed
+
+    with col1:
+        st.header(f"🔍 Filter Projects")
+        states = st.multiselect("State", data['state'].unique(), default=data['state'].unique(), key=f"state_{i}")
+        types = st.multiselect("Type", data['type'].unique(), default=data['type'].unique(), key=f"type_{i}")
+        techs = st.multiselect("Technology", data['technology'].unique(), default=data['technology'].unique(), key=f"tech_{i}")
+        bifacial = st.radio("Bifacial Modules", ["All", "Yes", "No"], index=0, key=f"bifacial_{i}")
+
+    # Filtering must be done outside the columns (so both columns can use the result)
+    filtered = data[
+        data['state'].isin(states) &
+        data['type'].isin(types) &
+        data['technology'].isin(techs)
+    ]
+    if bifacial != "All":
+        filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]
+
+    with col2:
         m = folium.Map(location=[21.0, 78.0], zoom_start=5)
-
-        # Add markers
         for _, row in filtered.iterrows():
             popup_html = generate_popup_html(row)
-
             folium.Marker(
                 location=[row['lat'], row['lon']],
                 popup=folium.Popup(popup_html, max_width=300),
                 icon=folium.Icon(color='orange', icon='bolt', prefix='fa')
             ).add_to(m)
+        st_folium(m, width="100%", height=700, key=f"map_{i}")
 
-        # Display map for this tab
-        st_data = st_folium(m, width="100%", height=800, key=f"map_{i}")
+# ########### INVESTMENT NAVIGATOR
+i = 2
+with tabs[2]:
+    # Create two columns: left for filters, right for map
+    col1, col2 = st.columns([1, 3])  # Adjust the ratio as needed
+
+    with col1:
+        st.header(f"🔍 Filter Projects")
+        states = st.multiselect("State", data['state'].unique(), default=data['state'].unique(), key=f"state_{i}")
+        types = st.multiselect("Type", data['type'].unique(), default=data['type'].unique(), key=f"type_{i}")
+        techs = st.multiselect("Technology", data['technology'].unique(), default=data['technology'].unique(), key=f"tech_{i}")
+        bifacial = st.radio("Bifacial Modules", ["All", "Yes", "No"], index=0, key=f"bifacial_{i}")
+
+    # Filtering must be done outside the columns (so both columns can use the result)
+    filtered = data[
+        data['state'].isin(states) &
+        data['type'].isin(types) &
+        data['technology'].isin(techs)
+    ]
+    if bifacial != "All":
+        filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]
+
+    with col2:
+        m = folium.Map(location=[21.0, 78.0], zoom_start=5)
+        for _, row in filtered.iterrows():
+            popup_html = generate_popup_html(row)
+            folium.Marker(
+                location=[row['lat'], row['lon']],
+                popup=folium.Popup(popup_html, max_width=300),
+                icon=folium.Icon(color='orange', icon='bolt', prefix='fa')
+            ).add_to(m)
+        st_folium(m, width="100%", height=700, key=f"map_{i}")
+
+# ########### TENDER NAVIGATOR
+i = 3
+with tabs[3]:
+    # Create two columns: left for filters, right for map
+    col1, col2 = st.columns([1, 3])  # Adjust the ratio as needed
+
+    with col1:
+        st.header(f"🔍 Filter Projects")
+        states = st.multiselect("State", data['state'].unique(), default=data['state'].unique(), key=f"state_{i}")
+        types = st.multiselect("Type", data['type'].unique(), default=data['type'].unique(), key=f"type_{i}")
+        techs = st.multiselect("Technology", data['technology'].unique(), default=data['technology'].unique(), key=f"tech_{i}")
+        bifacial = st.radio("Bifacial Modules", ["All", "Yes", "No"], index=0, key=f"bifacial_{i}")
+
+    # Filtering must be done outside the columns (so both columns can use the result)
+    filtered = data[
+        data['state'].isin(states) &
+        data['type'].isin(types) &
+        data['technology'].isin(techs)
+    ]
+    if bifacial != "All":
+        filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]
+
+    with col2:
+        m = folium.Map(location=[21.0, 78.0], zoom_start=5)
+        for _, row in filtered.iterrows():
+            popup_html = generate_popup_html(row)
+            folium.Marker(
+                location=[row['lat'], row['lon']],
+                popup=folium.Popup(popup_html, max_width=300),
+                icon=folium.Icon(color='orange', icon='bolt', prefix='fa')
+            ).add_to(m)
+        st_folium(m, width="100%", height=700, key=f"map_{i}")
