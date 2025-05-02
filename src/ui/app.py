@@ -19,14 +19,20 @@ You can run it in the terminal as follows:
 # #############################################################################
 # IMPORTS
 # #############################################################################
-import base64
-import streamlit as st
-import folium
-from streamlit_folium import st_folium
 import pandas as pd
-from app_marker_generator import generate_popup_html
-import app_projects
+import json
+
+import streamlit as st
+from streamlit_folium import st_folium
+
 from app_banner import generate_banner
+
+import app_page_projects
+import app_page_potential_explorer
+import app_page_investment_navigator
+import app_page_tender_navigator
+
+
 
 
 # #############################################################################
@@ -45,9 +51,12 @@ st.set_page_config(layout="wide")
     # Sample dummy data — replace with real data source
 @st.cache_data
 def load_data():
-    return pd.read_csv("dummy_data.csv")
+    return pd.read_csv("../../data/dummy_data.csv")
 data = load_data()
 
+    # Load Shapes
+with open("../../data/geography/Indian_States.json", "r", encoding="utf-8") as f:
+    state_geo = json.load(f)
 
 
 
@@ -74,120 +83,77 @@ with tabs[0]:
 
     # Filter Pane
     with col1:
-        st.header(f"🔍 Filter Projects")
-        states = st.multiselect("State", data['state'].unique(), default=data['state'].unique(), key=f"state_{i}")
-        types = st.multiselect("Type", data['type'].unique(), default=data['type'].unique(), key=f"type_{i}")
-        techs = st.multiselect("Technology", data['technology'].unique(), default=data['technology'].unique(), key=f"tech_{i}")
-        bifacial = st.radio("Bifacial Modules", ["All", "Yes", "No"], index=0, key=f"bifacial_{i}")
-
-    # Filtering must be done outside the columns (so both columns can use the result)
-    filtered = data[
-        data['state'].isin(states) &
-        data['type'].isin(types) &
-        data['technology'].isin(techs)
-    ]
-    if bifacial != "All":
-        filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]
+        st.markdown("#### 🔍 Filter Projects")
+        with st.container(height=600):  # Adjust height as needed
+            filtered = app_page_projects.generate_filter_pane(i, data)
 
     # Map
     with col2:
-        app_projects.generate_map(i, filtered, st_folium)
+        app_page_projects.generate_map(i, filtered, st_folium)
 
 # ########### SOLAR POTENTIAL EXPLORER
 i = 1
 with tabs[1]:
-    # Create two columns: left for filters, right for map
-    col1, col2 = st.columns([1, 3])  # Adjust the ratio as needed
+    col1, col2 = st.columns([2, 5])  # Adjust the ratio as needed
 
+    # Filter Pane
     with col1:
-        st.header(f"🔍 Filter Projects")
-        states = st.multiselect("State", data['state'].unique(), default=data['state'].unique(), key=f"state_{i}")
-        types = st.multiselect("Type", data['type'].unique(), default=data['type'].unique(), key=f"type_{i}")
-        techs = st.multiselect("Technology", data['technology'].unique(), default=data['technology'].unique(), key=f"tech_{i}")
-        bifacial = st.radio("Bifacial Modules", ["All", "Yes", "No"], index=0, key=f"bifacial_{i}")
+        st.markdown("#### 🔍 Filter Factors")
+        with st.container(height=600):  # Adjust height as needed
+            filtered = app_page_potential_explorer.generate_filter_pane(i, data)
 
-    # Filtering must be done outside the columns (so both columns can use the result)
-    filtered = data[
-        data['state'].isin(states) &
-        data['type'].isin(types) &
-        data['technology'].isin(techs)
-    ]
-    if bifacial != "All":
-        filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]
-
+    # Map
     with col2:
-        m = folium.Map(location=[21.0, 78.0], zoom_start=5)
-        for _, row in filtered.iterrows():
-            popup_html = generate_popup_html(row)
-            folium.Marker(
-                location=[row['lat'], row['lon']],
-                popup=folium.Popup(popup_html, max_width=300),
-                icon=folium.Icon(color='orange', icon='bolt', prefix='fa')
-            ).add_to(m)
-        st_folium(m, width="100%", height=700, key=f"map_{i}")
+        app_page_potential_explorer.generate_map(i, filtered, st_folium)
 
 # ########### INVESTMENT NAVIGATOR
 i = 2
 with tabs[2]:
-    # Create two columns: left for filters, right for map
-    col1, col2 = st.columns([1, 3])  # Adjust the ratio as needed
+    col1, col2, col3 = st.columns([2, 5, 2])  # Adjust the ratio as needed
 
+    # Filter Pane
     with col1:
-        st.header(f"🔍 Filter Projects")
-        states = st.multiselect("State", data['state'].unique(), default=data['state'].unique(), key=f"state_{i}")
-        types = st.multiselect("Type", data['type'].unique(), default=data['type'].unique(), key=f"type_{i}")
-        techs = st.multiselect("Technology", data['technology'].unique(), default=data['technology'].unique(), key=f"tech_{i}")
-        bifacial = st.radio("Bifacial Modules", ["All", "Yes", "No"], index=0, key=f"bifacial_{i}")
-
-    # Filtering must be done outside the columns (so both columns can use the result)
-    filtered = data[
-        data['state'].isin(states) &
-        data['type'].isin(types) &
-        data['technology'].isin(techs)
-    ]
-    if bifacial != "All":
-        filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]
-
+        st.markdown("#### 🔍 Your Company Details")
+        with st.container(height=600):  # Adjust height as needed
+            filtered = app_page_investment_navigator.generate_filter_pane(i, data)
+        
+    # Map
     with col2:
-        m = folium.Map(location=[21.0, 78.0], zoom_start=5)
-        for _, row in filtered.iterrows():
-            popup_html = generate_popup_html(row)
-            folium.Marker(
-                location=[row['lat'], row['lon']],
-                popup=folium.Popup(popup_html, max_width=300),
-                icon=folium.Icon(color='orange', icon='bolt', prefix='fa')
-            ).add_to(m)
-        st_folium(m, width="100%", height=700, key=f"map_{i}")
+        app_page_investment_navigator.generate_map(i, filtered, st_folium, state_geo)
 
+    # Calculator
+    with col3:
+        st.markdown("#### 🔍 Projected Business Numbers")
+        #with st.container(height=600):  # Adjust height as needed
+        #    app_page_investment_navigator.generate_filter_pane(i, data)
+        
 # ########### TENDER NAVIGATOR
 i = 3
 with tabs[3]:
-    # Create two columns: left for filters, right for map
-    col1, col2 = st.columns([1, 3])  # Adjust the ratio as needed
+    col1, col2 = st.columns([2, 5])  # Adjust the ratio as needed
 
     with col1:
-        st.header(f"🔍 Filter Projects")
-        states = st.multiselect("State", data['state'].unique(), default=data['state'].unique(), key=f"state_{i}")
-        types = st.multiselect("Type", data['type'].unique(), default=data['type'].unique(), key=f"type_{i}")
-        techs = st.multiselect("Technology", data['technology'].unique(), default=data['technology'].unique(), key=f"tech_{i}")
-        bifacial = st.radio("Bifacial Modules", ["All", "Yes", "No"], index=0, key=f"bifacial_{i}")
+        # Filter Pane (top 50%)
+        st.markdown("#### 🔍 Find Tenders")
+        with st.container(height=250):  # Adjust height as needed
+            filtered = app_page_tender_navigator.generate_filter_pane(i, data)
 
-    # Filtering must be done outside the columns (so both columns can use the result)
-    filtered = data[
-        data['state'].isin(states) &
-        data['type'].isin(types) &
-        data['technology'].isin(techs)
-    ]
-    if bifacial != "All":
-        filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]
+        # Scrollable Results (bottom 50%)
+        st.markdown("#### 📋 Tenders")
+        with st.container(height=250):  # Adjust height as needed
+            if filtered.empty:
+                st.info("No tenders match the selected filters.")
+            else:
+                for idx, row in filtered.iterrows():
+                    st.markdown(
+                        f"""
+                        <div style="padding:8px 0; border-bottom:1px solid #eee;">
+                            <b>{row['name']}</b> <br>
+                            <span style="color: #888;">{row['state']}, {row['year']}</span>
+                        </div>
+                        """,
+                        unsafe_allow_html=True
+                    )
 
     with col2:
-        m = folium.Map(location=[21.0, 78.0], zoom_start=5)
-        for _, row in filtered.iterrows():
-            popup_html = generate_popup_html(row)
-            folium.Marker(
-                location=[row['lat'], row['lon']],
-                popup=folium.Popup(popup_html, max_width=300),
-                icon=folium.Icon(color='orange', icon='bolt', prefix='fa')
-            ).add_to(m)
-        st_folium(m, width="100%", height=700, key=f"map_{i}")
+        app_page_tender_navigator.generate_map(i, filtered, st_folium)
