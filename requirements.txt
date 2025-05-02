@@ -1,0 +1,1 @@
+pip install streamlit folium streamlit-folium pandas
