@@ -17,14 +17,8 @@ This script contains functions for processing of scraped data from Tata Power.
 # #############################################################################
 # IMPORTS
 # #############################################################################
-import os
-import sys
-import re
-import requests
-
 import pandas as pd
 
-from bs4 import BeautifulSoup
 from geopy.geocoders import Nominatim
 
 

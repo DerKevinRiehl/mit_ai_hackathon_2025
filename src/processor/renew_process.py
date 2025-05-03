@@ -8,7 +8,7 @@ Submitted to:   MIT Global AI Hackathon 2025,
                 Track 01: Agentic AI for Dataset Building
                 Challenge 02: "Solar Detective: Mapping Indiaâ€™s Solar Infrastructure Using Agentic AI"
 -------------------------------------------
-This script contains functions for processing of scraped data from Tata Power.
+This script contains functions for processing of scraped data from renew.
 """
 
 
@@ -17,14 +17,8 @@ This script contains functions for processing of scraped data from Tata Power.
 # #############################################################################
 # IMPORTS
 # #############################################################################
-import os
-import sys
-import re
-import requests
-
 import pandas as pd
 
-from bs4 import BeautifulSoup
 from geopy.geocoders import Nominatim
 
 

@@ -17,8 +17,6 @@ This script contains functions for processing of scraped data from Tata Power.
 # #############################################################################
 # IMPORTS
 # #############################################################################
-import os
-import sys
 import re
 import requests
 

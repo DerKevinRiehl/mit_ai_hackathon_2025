@@ -30,52 +30,78 @@ import pandas as pd
 
 def generate_filter_pane(i, data):
     with st.expander("Filters", expanded=True):
-        col1, col2, col3, col4, col5 = st.columns(5)
-        with col1:
-            states = st.multiselect(
-                "State", 
-                data['state'].unique(), 
-                default=data['state'].unique(), 
-                key=f"state_{i}"
-            )
-        with col2:
-            types = st.multiselect(
-                "Type", 
-                data['type'].unique(), 
-                default=data['type'].unique(), 
-                key=f"type_{i}"
-            )
-        with col3:
-            techs = st.multiselect(
-                "Technology", 
-                data['technology'].unique(), 
-                default=data['technology'].unique(), 
-                key=f"tech_{i}"
-            )
-        with col4:
-            sources = st.multiselect(
-                "Source", 
-                data['Source'].unique(), 
-                default=data['Source'].unique(), 
-                key=f"source_{i}"
-            )
-        with col5:
-            bifacial = st.radio(
-                "Bifacial Modules", 
-                ["All", "Yes", "No"], 
-                index=0, 
-                key=f"bifacial_{i}"
-            )
+        sources = st.multiselect(
+            "Operator",  # Changed label here
+            data['source'].unique(), 
+            default=data['source'].unique(), 
+            key=f"source_{i}"
+        )
+        
+        # Produced Energy Slider
+        min_energy = float(data['produced_energy'].min()) if 'produced_energy' in data else 0.0
+        max_energy = float(data['produced_energy'].max()) if 'produced_energy' in data else 1000.0
+        produced_energy = st.slider(
+            "Capacity [MWh]",
+            min_value=min_energy,
+            max_value=max_energy,
+            value=(min_energy, max_energy),
+            key=f"energy_{i}"
+        )
+
+        # Commission Year Slider
+        if 'commission_year' in data:
+            min_year = int(data['commission_year'].min())
+            max_year = int(data['commission_year'].max())
+        else:
+            min_year, max_year = 2000, 2025
+        commission_year = st.slider(
+            "Commission Year",
+            min_value=min_year,
+            max_value=max_year,
+            value=(min_year, max_year),
+            key=f"commission_year_{i}"
+        )
+
+        # Single-select State with "All" option (moved here)
+        state_options = ["All"] + list(data['state'].unique())
+        state = st.selectbox(
+            "State",
+            options=state_options,
+            index=0,
+            key=f"state_{i}"
+        )
+
+        bifacial = st.multiselect(
+            "Bifacial Modules", 
+            ["Yes", "No"], 
+            default=["Yes", "No"], 
+            key=f"bifacial_{i}"
+        )
+        techs = st.multiselect(
+            "Technology", 
+            data['technology'].unique(), 
+            default=data['technology'].unique(), 
+            key=f"tech_{i}"
+        )
+        types = st.multiselect(
+            "Type", 
+            data['type'].unique(), 
+            default=data['type'].unique(), 
+            key=f"type_{i}"
+        )
 
     # Filtering logic
     filtered = data[
-        data['state'].isin(states) &
         data['type'].isin(types) &
         data['technology'].isin(techs) &
-        data['Source'].isin(sources)
+        data['source'].isin(sources)
     ]
-    if bifacial != "All":
-        filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]
+    # State filter (only if not "All")
+    if state != "All":
+        filtered = filtered[filtered['state'] == state]
+    # Bifacial filter as multiselect
+    if set(bifacial) != set(["Yes", "No"]):
+        filtered = filtered[filtered['bifacial'].map(lambda x: "Yes" if x else "No").isin(bifacial)]
     return filtered
 
 def generate_map(i, filtered, st_folium):

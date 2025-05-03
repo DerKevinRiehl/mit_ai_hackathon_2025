@@ -20,7 +20,6 @@ This script contains functions for the scraping of data from TATA-POWER:
 # #############################################################################
 
 import pandas as pd
-import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By

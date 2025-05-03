@@ -1,1 +1,7 @@
-pip install streamlit folium streamlit-folium pandas
+streamlit
+folium
+streamlit-folium
+beautifulsoup4
+geopy
+psycopg2-binary
+sqlalchemy
