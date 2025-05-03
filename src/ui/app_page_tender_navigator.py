@@ -30,28 +30,49 @@ import streamlit as st
 # #############################################################################
 
 def generate_filter_pane(i, data):
-    states = st.multiselect("State", data['state'].unique(), default=data['state'].unique(), key=f"state_{i}")
-    types = st.multiselect("Type", data['type'].unique(), default=data['type'].unique(), key=f"type_{i}")
-    techs = st.multiselect("Technology", data['technology'].unique(), default=data['technology'].unique(), key=f"tech_{i}")
-    bifacial = st.radio("Bifacial Modules", ["All", "Yes", "No"], index=0, key=f"bifacial_{i}")
+    import streamlit as st
 
-    # Filtering must be done outside the columns (so both columns can use the result)
-    filtered = data[
-        data['state'].isin(states) &
-        data['type'].isin(types) &
-        data['technology'].isin(techs)
+    # Fake State filter (hardcoded Indian states)
+    fake_states = [
+        "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+        "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+        "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
+        "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim",
+        "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+        "West Bengal"
     ]
-    if bifacial != "All":
-        filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]
-    return filtered
+    # states = st.multiselect(
+    #     "State", fake_states, default=fake_states, key=f"state_{i}"
+    # )
+    # Single-select State with "All" option (moved here)
+    state = st.selectbox(
+        "State",
+        options=["All", *fake_states],
+        index=0,
+        key=f"state_{i}"
+    )
+
+    # Fake Date of Publication filter (2025)
+    fake_dates = [f"2025-{str(month).zfill(2)}" for month in range(1, 13)]
+    publication_date = st.selectbox(
+        "Date of Publication", fake_dates, key=f"date_{i}"
+    )
+
+    # Fake Volume filter
+    fake_volumes = [f"Volume [USD] {v}" for v in range(1, 11)]
+    volume = st.slider(
+        "Volume [USD]", min_value=1, max_value=10, value=5, key=f"volume_{i}"
+    )
+    # No real filtering, just return the original data
+    return data
 
 def generate_map(i, filtered, st_folium):
     m = folium.Map(location=[21.0, 78.0], zoom_start=5)
     for _, row in filtered.iterrows():
-        popup_html = generate_popup_html(row)
+        # popup_html = generate_popup_html(row)
         folium.Marker(
             location=[row['lat'], row['lon']],
-            popup=folium.Popup(popup_html, max_width=300),
+            # popup=folium.Popup(popup_html, max_width=300),
             icon=folium.Icon(color='orange', icon='bolt', prefix='fa')
         ).add_to(m)
     st_folium(m, width="100%", height=700, key=f"map_{i}")

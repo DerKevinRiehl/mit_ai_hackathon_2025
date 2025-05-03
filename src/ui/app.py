@@ -138,7 +138,7 @@ with tabs[2]:
 
         # Scrollable Results (bottom 50%)
         st.markdown("#### 📋 Tenders")
-        with st.container(height=250):  # Adjust height as needed
+        with st.container(height=350):  # Adjust height as needed
             if filtered.empty:
                 st.info("No tenders match the selected filters.")
             else:
@@ -146,8 +146,8 @@ with tabs[2]:
                     st.markdown(
                         f"""
                         <div style="padding:8px 0; border-bottom:1px solid #eee;">
-                            <b>{row['name']}</b> <br>
-                            <span style="color: #888;">{row['state']}, {row['year']}</span>
+                            ({row['tender_id']}) <b>{row['tender_title']}</b> <br>
+                            <span style="color: #888;">{row['location']}, {row['tender_date']}, <a href="{row['tender_corrigendum']}">Details</a></span>
                         </div>
                         """,
                         unsafe_allow_html=True
