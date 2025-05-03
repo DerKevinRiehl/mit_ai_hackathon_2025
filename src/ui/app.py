@@ -57,12 +57,16 @@ def load_data():
     # Investment Data
     investment_data, investment_data_india = load_investment_data()
         
+    # Tender Data
+    tender_data = pd.read_csv("../../data/processed_data/gov_tenders_processed.csv")
+    
     # Geo Data
     with open("../../data/geography/Indian_States.json", "r", encoding="utf-8") as f:
         state_geo = json.load(f)
+        
     # Return Data
-    return project_data, investment_data, investment_data_india, state_geo
-project_data, investment_data, investment_data_india, state_geo = load_data()
+    return project_data, investment_data, investment_data_india, tender_data, state_geo
+project_data, investment_data, investment_data_india, tender_data, state_geo = load_data()
 
 
 
@@ -130,7 +134,7 @@ with tabs[2]:
         # Filter Pane (top 50%)
         st.markdown("#### 🔍 Find Tenders")
         with st.container(height=250):  # Adjust height as needed
-            filtered = app_page_tender_navigator.generate_filter_pane(i, project_data)
+            filtered = app_page_tender_navigator.generate_filter_pane(i, tender_data)
 
         # Scrollable Results (bottom 50%)
         st.markdown("#### 📋 Tenders")
