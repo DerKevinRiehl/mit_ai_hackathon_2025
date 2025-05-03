@@ -51,10 +51,12 @@ driver = webdriver.Chrome()
 driver.get(START_PAGE)
 
 time.sleep(1)
-driver.find_elements(By.CLASS_NAME, "category-drop")[2].click()
+element = driver.find_elements(By.CLASS_NAME, "category-drop")[2]
+driver.execute_script("arguments[0].scrollIntoView();", element)
 time.sleep(1)
-driver.find_element(By.XPATH, '//li[contains(@class, "filter_btn") and (normalize-space(text())="solar")]').click()
-time.sleep(10)
+#element.click()
+#driver.find_element(By.XPATH, '//li[contains(@class, "filter_btn") and (normalize-space(text())="solar")]').click()
+#time.sleep(10)
 
 # CLICK MORE
 while True:
@@ -69,8 +71,13 @@ while True:
 
     # 2. Try to find the "Next ›" button by its visible text in a <span>
     try:
-        next_button = driver.find_element(By.NAME, 'load_more_button')
-        next_button.click()
+        next_button = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.NAME, 'load_more_button'))
+        )
+        #next_button = driver.find_element(By.NAME, 'load_more_button')
+        driver.execute_script("arguments[0].scrollIntoView(true);", next_button)
+        time.sleep(1)
+        driver.execute_script("arguments[0].click();", next_button)
     except Exception:
         # "Next ›" not found, exit loop
         break
