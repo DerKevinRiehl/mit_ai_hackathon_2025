@@ -1,10 +1,16 @@
 title,category,types,location,capacity
+Acquisition - Hydro,Hydro Power Project,Hydro,Uttarakhand,99 MW
+RTC-I (7),Utility scale firm power projects,wind,Maharashtra,300 MW
+RTC-I (7),Utility scale firm power projects,wind,Karnataka,300 MW
+RTC-I (7),Utility scale firm power projects,wind,Karnataka,301 MW
+PP-I (7)(11),Utility scale firm power projects,wind,Karnataka,322 MW
 RTC-I (7),Utility scale firm power projects,solar,Rajasthan,400 MW
 PP-I (7)(11),Utility scale firm power projects,solar,Karnataka,81 MW
 Otha (7),Corporate/B2B solar energy projects,solar,Gujarat,16.68 MW
 Bandarwada,Corporate/B2B solar energy projects,solar,Maharashtra,43 MW
 Welturi,Corporate/B2B solar energy projects,solar,Maharashtra,20 MW
 Babaria (7),Corporate/B2B solar energy projects,solar,Gujarat,6.67 MW
+Multiple (7),Corporate/B2B solar and wind energy projects,Solar/Wind,Multiple,491.335 MW
 Ladha,Corporate/B2B solar energy projects,solar,Karnataka,20 MW
 Nirna,Corporate/B2B solar energy projects,solar,Karnataka,20 MW
 Wadgare,Corporate/B2B solar energy projects,solar,Karnataka,20 MW
@@ -55,3 +61,75 @@ VS-Star solar,Utility scale solar energy projects,solar,Rajasthan,5 MW
 Sheopur,Utility scale solar energy projects,solar,Madhya Pradesh,50 MW
 VS- Symphony,Utility scale solar energy projects,solar,Rajasthan,10 MW
 VS- Lexicon,Utility scale solar energy projects,solar,Rajasthan,10 MW
+Otha (7),Corporate/B2B wind energy projects,wind,Gujarat,11 MW
+Babaria (7),Corporate/B2B wind energy projects,wind,Gujarat,17.6 MW
+Jogihalli,Corporate/B2B wind energy projects,wind,Karnataka,7.2 MW
+Jogihalli,Corporate/B2B wind energy projects,wind,Karnataka,4.8 MW
+Ron,Corporate/B2B wind energy projects,wind,Karnataka,40 MW
+Lingasugur,Corporate/B2B wind energy projects,wind,Karnataka,40 MW
+Chikodi,Corporate/B2B wind energy projects,wind,Karnataka,18 MW
+Tadas,Corporate/B2B wind energy projects,wind,Karnataka,16 MW
+Tadas,Corporate/B2B wind energy projects,wind,Karnataka,34.4 MW
+SECI VII,Utility scale wind energy projects,wind,Gujarat,15.4 MW
+SECI VI,Utility scale wind energy projects,wind,Karnataka,163.4 MW
+SECI VII,Utility scale wind energy projects,wind,Gujarat,35.2 MW
+SECI VI,Utility scale wind energy projects,wind,Karnataka,136.6 MW
+SECI III,Utility scale wind energy projects,wind,Gujarat,300 MW
+MSEDCL Bid,Utility scale wind energy projects,wind,Maharashtra,76 MW
+GUVNL,Utility scale wind energy projects,wind,Gujarat,35 MW
+SECI II,Utility scale wind energy projects,wind,Gujarat,230.1 MW
+Ostro - Kutch (SECI 1),Utility scale wind energy projects,wind,Gujarat,250 MW
+Kushtagi � 1,Utility scale wind energy projects,wind,Karnataka,71.4 MW
+Borampalli,Utility scale wind energy projects,wind,Andhra Pradesh,50.4 MW
+Nirlooti,Utility scale wind energy projects,wind,Karnataka,60 MW
+Bapuram,Utility scale wind energy projects,wind,Karnataka,50 MW
+Bableshwar 2,Utility scale wind energy projects,wind,Karnataka,40 MW
+Ostro - Taralkatti,Utility scale wind energy projects,wind,Karnataka,100 MW
+Sadla,Utility scale wind energy projects,wind,Gujarat,10 MW
+Sadla,Utility scale wind energy projects,wind,Gujarat,38 MW
+Ostro - Badoni Dewas,Utility scale wind energy projects,wind,Madhya Pradesh,29.4 MW
+Ostro - AVP Dewas,Utility scale wind energy projects,wind,Madhya Pradesh,27.3 MW
+Ostro - Ralla AP,Utility scale wind energy projects,wind,Andhra Pradesh,98.7 MW
+Ostro - Ralla Andhra,Utility scale wind energy projects,wind,Andhra Pradesh,98.7 MW
+Ostro - Sattegiri,Utility scale wind energy projects,wind,Karnataka,60 MW
+Molagavalli,Utility scale wind energy projects,wind,Andhra Pradesh,46 MW
+Lahori,Utility scale wind energy projects,wind,Madhya Pradesh,26 MW
+Patan,Utility scale wind energy projects,wind,Gujarat,50 MW
+Amba-2,Utility scale wind energy projects,wind,Madhya Pradesh,8 MW
+Amba-1,Utility scale wind energy projects,wind,Madhya Pradesh,44 MW
+Veerabhadra,Utility scale wind energy projects,wind,Andhra Pradesh,100.8 MW
+Bableshwar,Utility scale wind energy projects,wind,Karnataka,50 MW
+Batkurki,Utility scale wind energy projects,wind,Karnataka,60 MW
+Ellutala,Utility scale wind energy projects,wind,Andhra Pradesh,119.7 MW
+Limbwas 2,Utility scale wind energy projects,wind,Madhya Pradesh,18 MW
+Ostro - Nimbagallu,Utility scale wind energy projects,wind,Andhra Pradesh,100 MW
+Ostro - Amba,Utility scale wind energy projects,wind,Madhya Pradesh,66 MW
+Ostro - Lahori,Utility scale wind energy projects,wind,Madhya Pradesh,92 MW
+Kod and Limbwas,Utility scale wind energy projects,wind,Madhya Pradesh,90.3 MW
+Nipaniya,Utility scale wind energy projects,wind,Madhya Pradesh,40 MW
+Bhesada,Utility scale wind energy projects,wind,Rajasthan,100.8 MW
+Mandsaur,Utility scale wind energy projects,wind,Madhya Pradesh,7.2 MW
+Mandsaur,Utility scale wind energy projects,wind,Madhya Pradesh,28.8 MW
+Ostro - Rajgarh,Utility scale wind energy projects,wind,Rajasthan,25.6 MW
+Rajgarh,Utility scale wind energy projects,wind,Rajasthan,25.6 MW
+Vinjalpur,Utility scale wind energy projects,wind,Gujarat,12 MW
+KCT Gamesa 40 Molagavalli,Utility scale wind energy projects,wind,Andhra Pradesh,40 MW
+KCTGE 39.1 Molagavalli,Utility scale wind energy projects,wind,Andhra Pradesh,39.1 MW
+KCT Gamesa 24 Kalyandurg,Utility scale wind energy projects,wind,Andhra Pradesh,24 MW
+Ostro - Tejuva,Utility scale wind energy projects,wind,Rajasthan,50.4 MW
+Pratapgarh,Utility scale wind energy projects,wind,Rajasthan,4.5 MW
+Pratapgarh,Utility scale wind energy projects,wind,Rajasthan,46.5 MW
+Vaspet-IV,Utility scale wind energy projects,wind,Maharashtra,49.5 MW
+Dangri,Utility scale wind energy projects,wind,Rajasthan,30 MW
+Welturi-II,Utility scale wind energy projects,wind,Maharashtra,23.1 MW
+Budh-I,Utility scale wind energy projects,wind,Maharashtra,30 MW
+Welturi-I,Utility scale wind energy projects,wind,Maharashtra,50.4 MW
+Vaspet-II &amp; III,Utility scale wind energy projects,wind,Maharashtra,49.5 MW
+Jamb,Utility scale wind energy projects,wind,Maharashtra,28 MW
+Bakhrani,Utility scale wind energy projects,wind,Rajasthan,14.4 MW
+Jath,Utility scale wind energy projects,wind,Maharashtra,50.2 MW
+Jath,Utility scale wind energy projects,wind,Maharashtra,34.5 MW
+Vaspet-I,Utility scale wind energy projects,wind,Maharashtra,19.5 MW
+Vaspet-I,Utility scale wind energy projects,wind,Maharashtra,25.5 MW
+SREI,Utility scale wind energy projects,wind,Rajasthan,60 MW
+Jasdan,Utility scale wind energy projects,wind,Gujarat,25.2 MW

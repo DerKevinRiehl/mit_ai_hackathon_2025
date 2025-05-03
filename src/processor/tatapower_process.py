@@ -17,6 +17,7 @@ This script contains functions for processing of scraped data from Tata Power.
 # #############################################################################
 # IMPORTS
 # #############################################################################
+import os
 import sys
 import re
 import requests
@@ -100,7 +101,6 @@ for idx, row in df.iterrows():
 
 info_df = pd.DataFrame(data=projects_info)
 del projects_info
-print(info_df.head())
 
 info_df = info_df.rename(
     columns={
@@ -114,11 +114,13 @@ info_df = info_df.rename(
         "Project_Image_Link": "image_url"
 })
 info_df["developer"] = "TATA Power"
-main_df = pd.read_csv("../../data/dummy_data.csv")
-main_df = pd.concat([info_df, main_df], ignore_index=True)
-main_df.to_csv("../../data/data_processed.csv", index=False)
+info_df.to_csv("../../data/company_tata_projects_processed.csv", index=False)
 
 # Now merge with dummy_data
 # name,lat,lon,state,capacity,developer,year,
 # type,technology,bifacial,grid,manufacturer,offtake,
 # financing,performance,irradiance,grid_proximity,image_url
+
+#main_df = pd.read_csv("../../data/dummy_data.csv")
+#main_df = pd.concat([info_df, main_df], ignore_index=True)
+#main_df.to_csv("../../data/data_processed.csv", index=False)
