@@ -51,7 +51,7 @@ st.set_page_config(layout="wide")
     # Sample dummy data — replace with real data source
 @st.cache_data
 def load_data():
-    dummy_data = pd.read_csv("../../data/dummy_data.csv")
+    dummy_data = pd.read_csv("../../data/data_processed.csv")
     # Investment Data
     investment_data = pd.read_excel("../../data/geography/india_climate_energy_dashboard/IndiaClimateEnergyDashboard_Complete.xlsx", header=1)
     return dummy_data, investment_data
