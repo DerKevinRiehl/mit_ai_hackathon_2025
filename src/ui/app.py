@@ -40,7 +40,7 @@ import app_page_tender_navigator
 # #############################################################################
 
     # Streamlit page config
-# st.set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 
 
 
@@ -52,21 +52,29 @@ import app_page_tender_navigator
 @st.cache_data
 def load_data():
     dummy_data = pd.read_csv("../../data/dummy_data.csv")
-    investment_data = pd.read_csv("../../geography/india_climate_energy_dashboard/IndiaClimateEnergyDashboard_Complete.xlsx")
-    return 
-data = load_data()
+    # Investment Data
+    investment_data = pd.read_excel("../../data/geography/india_climate_energy_dashboard/IndiaClimateEnergyDashboard_Complete.xlsx", header=1)
+    return dummy_data, investment_data
+data, investment_data = load_data()
 
     # Load Shapes
 with open("../../data/geography/Indian_States.json", "r", encoding="utf-8") as f:
     state_geo = json.load(f)
 
 
-
-import sys
-sys.exit(0)
-
-
-
+investment_data_columns = ['Installed Capacity [loc]', 'Installed Capacity [dec]',
+       'Hydro', 'Nuclear', 'RES', 'Thermal', 'Central', 'Private', 'State.1',
+       'Rooftop Solar Capacity', 'Generation', 'Peak Demand',
+       'Electricity Sales', 'AT&C Losses', 'ACS-ARR (Electricity Sales) Gap',
+       'GDP [ConstPrice]', 'GDP [CurrPrice]', 'SectoralGVA [ConstPrice]',
+       'SectoralGVA [CurrPrice]', 'Population', 'IncomePerCapita [CurrPrice]',
+       'IncomePerCapita [ConstPrice]', 'NO2', 'SO2', 'PMO', 'PM25']
+investment_data = investment_data.iloc[2:]
+for col in investment_data_columns:
+    investment_data[col] = investment_data[col].astype(float)
+    
+# import sys
+# sys.exit(0)
 
 # #############################################################################
 # USER INTERFACE LAYOUT
@@ -123,7 +131,7 @@ with tabs[2]:
     with col1:
         st.markdown("#### 🔍 Your Company Details")
         with st.container(height=600):  # Adjust height as needed
-            filtered = app_page_investment_navigator.generate_filter_pane(i, data)
+            filtered = app_page_investment_navigator.generate_filter_pane(i, data, investment_data)
         
     # Map
     with col2:
@@ -131,7 +139,7 @@ with tabs[2]:
 
     # Calculator
     with col3:
-        st.markdown("#### 🔍 Projected Business Numbers")
+        st.markdown("#### 🔍 Projected Business Statement")
         #with st.container(height=600):  # Adjust height as needed
         #    app_page_investment_navigator.generate_filter_pane(i, data)
         
