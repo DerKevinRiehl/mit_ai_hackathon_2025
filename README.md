@@ -2,7 +2,9 @@
 
 Submission to:
 MIT Global AI Hackathon 2025, 
+
 Track 01: Agentic AI for Dataset Building
+
 Challenge 02: "Solar Detective: Mapping India's Solar Infrastructure Using Agentic AI"
 
 ## Team
