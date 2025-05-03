@@ -1,0 +1,10 @@
+Electricity,Unit,All India,Himachal Pradesh,Jammu and Kashmir,Jharkhand,Karnataka,Kerala,Lakshadweep,Ladakh
+Installed Capacity (Geographical location based),MW,"416,058.91","11,330.42","3,731.12","5,234.19","30,793.64","3,650.65",30.10,137.79
+Installed Capacity (Including Allocated Shares in Joint & Central Sector Utilities),MW,"416,058.89","4,489.9","3,515.99","2,666.44","31,493.49","6,385.84",30.1,N.A.
+Rooftop Solar Capacity,MW,"8,877.93",19.31,22.60,38.33,593.90,440.59,N.A.,1.80
+Generation,MU,"1,617,723.12","41,579.93","17,170.61","30,858.90","85,190.33","9,935.40",15.12,402.78
+Peak Demand,MW,"211,856","2,071","3,145","1,830","15,828","4,517",N.A.,N.A.
+Peak Demand Date,-,10/06/2022,06/01/2023,03/01/2023,19/04/2022,29/03/2023,28/03/2023,N.A.,N.A.
+Electricity Sales,MU,1151960.48,"10,842.72","9,155.16","18,372.72","62,269.65","24,876.32",56.99,170.22
+AT&C Losses,%,17.47,0.00,49.00,21.56,12.52,12.11,0.00,42.90
+ACS-ARR (Electricity Sales) Gap,Rs./kWh,1.52,-1.13,4.58,-0.13,0.37,0.77,28.31,6.29

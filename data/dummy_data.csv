@@ -1,4 +1,4 @@
-name,lat,lon,state,capacity,developer,year,type,technology,bifacial,grid,manufacturer,offtake,financing,performance,irradiance,grid_proximity,image_url
-Solar Park A,28.7041,77.1025,Delhi,100,ABC Solar Ltd.,2020,Utility-scale,c-Si,True,132kV Substation A,XYZ Panels Co.,PPA,ADB loan (public),95% avg CUF,5.2 kWh/m²/day,1.2 km,https://via.placeholder.com/150
-Rooftop B,19.0760,72.8777,Maharashtra,2,GreenHomes,2022,Rooftop,CdTe,False,Low-voltage net meter,ThinFilmTech,Net Metering,Private Equity,88% CUF,4.8 kWh/m²/day,Direct,https://via.placeholder.com/150
-Floating Solar C,13.0827,80.2707,Tamil Nadu,10,SunFloat Energy,2021,Floating,c-Si,True,220kV Transmission,SunTech,Merchant Market,World Bank-backed,90% CUF,5.5 kWh/m²/day,0.5 km,https://via.placeholder.com/150
+name,lat,lon,state,capacity,developer,year,type,technology,bifacial,grid,manufacturer,offtake,financing,performance,irradiance,grid_proximity,image_url,source
+Solar Park A,28.7041,77.1025,Delhi,100,ABC Solar Ltd.,2020,Utility-scale,c-Si,True,132kV Substation A,XYZ Panels Co.,PPA,ADB loan (public),95% avg CUF,5.2 kWh/m²/day,1.2 km,https://via.placeholder.com/150,tata
+Rooftop B,19.0760,72.8777,Maharashtra,2,GreenHomes,2022,Rooftop,CdTe,False,Low-voltage net meter,ThinFilmTech,Net Metering,Private Equity,88% CUF,4.8 kWh/m²/day,Direct,https://via.placeholder.com/150,renew
+Floating Solar C,13.0827,80.2707,Tamil Nadu,10,SunFloat Energy,2021,Floating,c-Si,True,220kV Transmission,SunTech,Merchant Market,World Bank-backed,90% CUF,5.5 kWh/m²/day,0.5 km,https://via.placeholder.com/150,azure

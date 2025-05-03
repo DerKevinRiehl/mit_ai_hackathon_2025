@@ -40,7 +40,7 @@ import app_page_tender_navigator
 # #############################################################################
 
     # Streamlit page config
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 
 
 
@@ -51,12 +51,20 @@ st.set_page_config(layout="wide")
     # Sample dummy data — replace with real data source
 @st.cache_data
 def load_data():
-    return pd.read_csv("../../data/dummy_data.csv")
+    dummy_data = pd.read_csv("../../data/dummy_data.csv")
+    investment_data = pd.read_csv("../../geography/india_climate_energy_dashboard/IndiaClimateEnergyDashboard_Complete.xlsx")
+    return 
 data = load_data()
 
     # Load Shapes
 with open("../../data/geography/Indian_States.json", "r", encoding="utf-8") as f:
     state_geo = json.load(f)
+
+
+
+import sys
+sys.exit(0)
+
 
 
 

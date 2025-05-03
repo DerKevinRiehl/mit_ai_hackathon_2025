@@ -1,0 +1,10 @@
+Electricity,Unit,All India,Madhya Pradesh,Maharashtra,Manipur,Meghalaya,Mizoram,Nagaland,Odisha
+Installed Capacity (Geographical location based),MW,"416,058.91","30,090.08","44,267.58",158.73,372.48,133.48,110.71,"12,322.57"
+Installed Capacity (Including Allocated Shares in Joint & Central Sector Utilities),MW,"416,058.89","25,646.28","45,546.31",238.23,577.55,242.24,208.07,"7,781.09"
+Rooftop Solar Capacity,MW,"8,877.93",257.22,"1,488.76",6.36,0.21,1.56,1.00,21.66
+Generation,MU,"1,617,723.12","152,020.28","158,993.39",486.15,"1,051.88",266.36,289.32,"72,755.21"
+Peak Demand,MW,"211,856","17,238","28,914",253,410,157,168,"6,687"
+Peak Demand Date,-,10/06/2022,13/01/2023,07/04/2022,19/01/2023,04/01/2023,16/01/2023,19/09/2022,24/09/2022
+Electricity Sales,MU,1151960.48,"67,493.63","131,245.53",759.66,"1,547.04",541.86,713.40,"26,831.95"
+AT&C Losses,%,17.47,20.96,8.88,13.82,23.97,26.27,45.81,19.63
+ACS-ARR (Electricity Sales) Gap,Rs./kWh,1.52,0.28,0.84,0.1,-0.54,2.02,0.48,-0.33

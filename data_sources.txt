@@ -23,3 +23,24 @@ https://www.nsefi.in/
 Grid Operators:
 ---------------
 https://report.grid-india.in/index.php?p=Weekly+Report%2FPSP+Report
+
+
+
+
+======================================================================
+Geo Data:
+---------------
+Maps:
+
+	https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_IND_0.json
+	https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_IND_1.json
+	https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_IND_2.json
+	https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_IND_3.json
+	
+Population:
+	https://statisticstimes.com/demographics/india/indian-states-population.php
+	
+Socio-Economic-Environment Factors:
+	https://iced.niti.gov.in/analytics/state-wise-deep-dive
+	
+	
