@@ -114,6 +114,7 @@ info_df = info_df.rename(
         "Project_Image_Link": "image_url"
 })
 info_df["developer"] = "TATA Power"
+info_df["source"] = "tata"
 info_df.to_csv("../../data/company_tata_projects_processed.csv", index=False)
 
 # Now merge with dummy_data

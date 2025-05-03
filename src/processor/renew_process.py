@@ -47,6 +47,7 @@ df = df.rename(
     }
 )
 df["developer"] = "ReNew"
+df["source"] = "renew"
 df["lat"] = pd.NA
 df["lon"] = pd.NA
 

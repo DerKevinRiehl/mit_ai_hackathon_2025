@@ -1,58 +1,58 @@
-name,type,types,state,capacity,developer,lat,lon
-RTC-I (7),Utility scale firm power projects,solar,Rajasthan,400 MW,ReNew,26.8105777,73.7684549
-PP-I (7)(11),Utility scale firm power projects,solar,Karnataka,81 MW,ReNew,14.5203896,75.7223521
-Otha (7),Corporate/B2B solar energy projects,solar,Gujarat,16.68 MW,ReNew,22.3850051,71.745261
-Bandarwada,Corporate/B2B solar energy projects,solar,Maharashtra,43 MW,ReNew,18.9068356,75.6741579
-Welturi,Corporate/B2B solar energy projects,solar,Maharashtra,20 MW,ReNew,18.9068356,75.6741579
-Babaria (7),Corporate/B2B solar energy projects,solar,Gujarat,6.67 MW,ReNew,22.3850051,71.745261
-Multiple (7),Corporate/B2B solar and wind energy projects,Solar/Wind,Multiple,491.335 MW,ReNew,32.7979615,-117.1509655
-Ladha,Corporate/B2B solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-Nirna,Corporate/B2B solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-Wadgare,Corporate/B2B solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-Raichur,Corporate/B2B solar energy projects,solar,Karnataka,50 MW,ReNew,14.5203896,75.7223521
-Ittigi,Corporate/B2B solar energy projects,solar,Karnataka,50 MW,ReNew,14.5203896,75.7223521
-PSPCL,Utility scale solar energy projects,solar,Rajasthan,100 MW,ReNew,26.8105777,73.7684549
-SECI IX,Utility scale solar energy projects,solar,Rajasthan,300 MW,ReNew,26.8105777,73.7684549
-SECI RAJ IV,Utility scale solar energy projects,solar,Rajasthan,975 MW,ReNew,26.8105777,73.7684549
-GUVNL IX (Dholera) (11),Utility scale solar energy projects,solar,Gujarat,200 MW,ReNew,22.3850051,71.745261
-SECI IX (10),Utility scale solar energy projects,solar,Rajasthan,400 MW,ReNew,26.8105777,73.7684549
-SECI VIII (11),Utility scale solar energy projects,solar,Rajasthan,200 MW,ReNew,26.8105777,73.7684549
-SECI � Rihand,Utility scale solar energy projects,solar,UP,100 MW,ReNew,46.2882039,-87.0446343
-Acquisition - Telangana (9),Utility scale solar energy projects,solar,Telangana,260 MW,ReNew,17.8495919,79.1151663
-SECI VI,Utility scale solar energy projects,solar,Rajasthan,300 MW,ReNew,26.8105777,73.7684549
-Mah Ph II,Utility scale solar energy projects,solar,Rajasthan,300 MW,ReNew,26.8105777,73.7684549
-SECI IV,Utility scale solar energy projects,solar,Rajasthan,300 MW,ReNew,26.8105777,73.7684549
-SECI III,Utility scale solar energy projects,solar,Rajasthan,300 MW,ReNew,26.8105777,73.7684549
-GUVNL,Utility scale solar energy projects,solar,Gujarat,105 MW,ReNew,22.3850051,71.745261
-SECI Raj,Utility scale solar energy projects,solar,Rajasthan,110 MW,ReNew,26.8105777,73.7684549
-Karnataka 140,Utility scale solar energy projects,solar,Karnataka,140 MW,ReNew,14.5203896,75.7223521
-Mah Ph I,Utility scale solar energy projects,solar,Rajasthan,250 MW,ReNew,26.8105777,73.7684549
-TN 100,Utility scale solar energy projects,solar,TamilNadu,100 MW,ReNew,10.9094334,78.3665347
-Bhadla,Utility scale solar energy projects,solar,Rajasthan,50 MW,ReNew,26.8105777,73.7684549
-Ostro - Rajasthan,Utility scale solar energy projects,solar,Rajasthan,60 MW,ReNew,26.8105777,73.7684549
-Mahbubnagar 2,Utility scale solar energy projects,solar,Telangana,100 MW,ReNew,17.8495919,79.1151663
-Turuvekere,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-Honnali,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-Yadgir,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-MPsolar II,Utility scale solar energy projects,solar,Madhya Pradesh,51 MW,ReNew,23.8143419,77.5340719
-Ostro - Wanaparthy,Utility scale solar energy projects,solar,Telangana,50 MW,ReNew,17.8495919,79.1151663
-Devdurga,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-Dichipally,Utility scale solar energy projects,solar,Telangana,143 MW,ReNew,17.8495919,79.1151663
-Minpur,Utility scale solar energy projects,solar,Telangana,65 MW,ReNew,17.8495919,79.1151663
-Chincoli,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-Mulkanoor,Utility scale solar energy projects,solar,Telangana,30 MW,ReNew,17.8495919,79.1151663
-Charanka,Utility scale solar energy projects,solar,Gujarat,40 MW,ReNew,22.3850051,71.745261
-Humnabad,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-Siruguppa,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-Bhalki,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-Alland,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,14.5203896,75.7223521
-Mandamarri,Utility scale solar energy projects,solar,Telangana,48 MW,ReNew,17.8495919,79.1151663
-Sadashivpet,Utility scale solar energy projects,solar,Telangana,24 MW,ReNew,17.8495919,79.1151663
-Mehbubnagar -1,Utility scale solar energy projects,solar,Telangana,100 MW,ReNew,17.8495919,79.1151663
-Cumbum,Utility scale solar energy projects,solar,Andhra Pradesh,21 MW,ReNew,15.9240905,80.1863809
-Adoni,Utility scale solar energy projects,solar,Andhra Pradesh,39 MW,ReNew,15.9240905,80.1863809
-VS-Sun Gold,Utility scale solar energy projects,solar,Rajasthan,5 MW,ReNew,26.8105777,73.7684549
-VS-Star solar,Utility scale solar energy projects,solar,Rajasthan,5 MW,ReNew,26.8105777,73.7684549
-Sheopur,Utility scale solar energy projects,solar,Madhya Pradesh,50 MW,ReNew,23.8143419,77.5340719
-VS- Symphony,Utility scale solar energy projects,solar,Rajasthan,10 MW,ReNew,26.8105777,73.7684549
-VS- Lexicon,Utility scale solar energy projects,solar,Rajasthan,10 MW,ReNew,26.8105777,73.7684549
+name,type,types,state,capacity,developer,source,lat,lon
+RTC-I (7),Utility scale firm power projects,solar,Rajasthan,400 MW,ReNew,renew,26.8105777,73.7684549
+PP-I (7)(11),Utility scale firm power projects,solar,Karnataka,81 MW,ReNew,renew,14.5203896,75.7223521
+Otha (7),Corporate/B2B solar energy projects,solar,Gujarat,16.68 MW,ReNew,renew,22.3850051,71.745261
+Bandarwada,Corporate/B2B solar energy projects,solar,Maharashtra,43 MW,ReNew,renew,18.9068356,75.6741579
+Welturi,Corporate/B2B solar energy projects,solar,Maharashtra,20 MW,ReNew,renew,18.9068356,75.6741579
+Babaria (7),Corporate/B2B solar energy projects,solar,Gujarat,6.67 MW,ReNew,renew,22.3850051,71.745261
+Multiple (7),Corporate/B2B solar and wind energy projects,Solar/Wind,Multiple,491.335 MW,ReNew,renew,32.7979615,-117.1509655
+Ladha,Corporate/B2B solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+Nirna,Corporate/B2B solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+Wadgare,Corporate/B2B solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+Raichur,Corporate/B2B solar energy projects,solar,Karnataka,50 MW,ReNew,renew,14.5203896,75.7223521
+Ittigi,Corporate/B2B solar energy projects,solar,Karnataka,50 MW,ReNew,renew,14.5203896,75.7223521
+PSPCL,Utility scale solar energy projects,solar,Rajasthan,100 MW,ReNew,renew,26.8105777,73.7684549
+SECI IX,Utility scale solar energy projects,solar,Rajasthan,300 MW,ReNew,renew,26.8105777,73.7684549
+SECI RAJ IV,Utility scale solar energy projects,solar,Rajasthan,975 MW,ReNew,renew,26.8105777,73.7684549
+GUVNL IX (Dholera) (11),Utility scale solar energy projects,solar,Gujarat,200 MW,ReNew,renew,22.3850051,71.745261
+SECI IX (10),Utility scale solar energy projects,solar,Rajasthan,400 MW,ReNew,renew,26.8105777,73.7684549
+SECI VIII (11),Utility scale solar energy projects,solar,Rajasthan,200 MW,ReNew,renew,26.8105777,73.7684549
+SECI � Rihand,Utility scale solar energy projects,solar,UP,100 MW,ReNew,renew,46.2882039,-87.0446343
+Acquisition - Telangana (9),Utility scale solar energy projects,solar,Telangana,260 MW,ReNew,renew,17.8495919,79.1151663
+SECI VI,Utility scale solar energy projects,solar,Rajasthan,300 MW,ReNew,renew,26.8105777,73.7684549
+Mah Ph II,Utility scale solar energy projects,solar,Rajasthan,300 MW,ReNew,renew,26.8105777,73.7684549
+SECI IV,Utility scale solar energy projects,solar,Rajasthan,300 MW,ReNew,renew,26.8105777,73.7684549
+SECI III,Utility scale solar energy projects,solar,Rajasthan,300 MW,ReNew,renew,26.8105777,73.7684549
+GUVNL,Utility scale solar energy projects,solar,Gujarat,105 MW,ReNew,renew,22.3850051,71.745261
+SECI Raj,Utility scale solar energy projects,solar,Rajasthan,110 MW,ReNew,renew,26.8105777,73.7684549
+Karnataka 140,Utility scale solar energy projects,solar,Karnataka,140 MW,ReNew,renew,14.5203896,75.7223521
+Mah Ph I,Utility scale solar energy projects,solar,Rajasthan,250 MW,ReNew,renew,26.8105777,73.7684549
+TN 100,Utility scale solar energy projects,solar,TamilNadu,100 MW,ReNew,renew,10.9094334,78.3665347
+Bhadla,Utility scale solar energy projects,solar,Rajasthan,50 MW,ReNew,renew,26.8105777,73.7684549
+Ostro - Rajasthan,Utility scale solar energy projects,solar,Rajasthan,60 MW,ReNew,renew,26.8105777,73.7684549
+Mahbubnagar 2,Utility scale solar energy projects,solar,Telangana,100 MW,ReNew,renew,17.8495919,79.1151663
+Turuvekere,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+Honnali,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+Yadgir,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+MPsolar II,Utility scale solar energy projects,solar,Madhya Pradesh,51 MW,ReNew,renew,23.8143419,77.5340719
+Ostro - Wanaparthy,Utility scale solar energy projects,solar,Telangana,50 MW,ReNew,renew,17.8495919,79.1151663
+Devdurga,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+Dichipally,Utility scale solar energy projects,solar,Telangana,143 MW,ReNew,renew,17.8495919,79.1151663
+Minpur,Utility scale solar energy projects,solar,Telangana,65 MW,ReNew,renew,17.8495919,79.1151663
+Chincoli,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+Mulkanoor,Utility scale solar energy projects,solar,Telangana,30 MW,ReNew,renew,17.8495919,79.1151663
+Charanka,Utility scale solar energy projects,solar,Gujarat,40 MW,ReNew,renew,22.3850051,71.745261
+Humnabad,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+Siruguppa,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+Bhalki,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+Alland,Utility scale solar energy projects,solar,Karnataka,20 MW,ReNew,renew,14.5203896,75.7223521
+Mandamarri,Utility scale solar energy projects,solar,Telangana,48 MW,ReNew,renew,17.8495919,79.1151663
+Sadashivpet,Utility scale solar energy projects,solar,Telangana,24 MW,ReNew,renew,17.8495919,79.1151663
+Mehbubnagar -1,Utility scale solar energy projects,solar,Telangana,100 MW,ReNew,renew,17.8495919,79.1151663
+Cumbum,Utility scale solar energy projects,solar,Andhra Pradesh,21 MW,ReNew,renew,15.9240905,80.1863809
+Adoni,Utility scale solar energy projects,solar,Andhra Pradesh,39 MW,ReNew,renew,15.9240905,80.1863809
+VS-Sun Gold,Utility scale solar energy projects,solar,Rajasthan,5 MW,ReNew,renew,26.8105777,73.7684549
+VS-Star solar,Utility scale solar energy projects,solar,Rajasthan,5 MW,ReNew,renew,26.8105777,73.7684549
+Sheopur,Utility scale solar energy projects,solar,Madhya Pradesh,50 MW,ReNew,renew,23.8143419,77.5340719
+VS- Symphony,Utility scale solar energy projects,solar,Rajasthan,10 MW,ReNew,renew,26.8105777,73.7684549
+VS- Lexicon,Utility scale solar energy projects,solar,Rajasthan,10 MW,ReNew,renew,26.8105777,73.7684549
