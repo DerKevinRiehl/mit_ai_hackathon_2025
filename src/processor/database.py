@@ -43,7 +43,7 @@ df = pd.read_csv('../../data/data_processed.csv')
 df.to_sql('project_overview', engine, if_exists='replace', index=False)
 
 # Investment Navigator Data
-df = pd.read_csv('../../data/geography\india_climate_energy_dashboarddata_processed.csv')
+df = pd.read_excel('../../data/data_processed/national_statistics.xlsx')
 df.to_sql('national_data', engine, if_exists='replace', index=False)
 
 # Tender Data

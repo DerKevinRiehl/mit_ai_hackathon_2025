@@ -50,7 +50,7 @@ st.set_page_config(layout="wide")
 # #############################################################################    
 
 def load_investment_data():
-    investment_data = pd.read_excel("../../data/geography/india_climate_energy_dashboard/IndiaClimateEnergyDashboard_Complete.xlsx", header=1)
+    investment_data = pd.read_excel("../../data/processed_data/national_statistics.xlsx", header=1)
     investment_data_columns = ['Installed Capacity [loc]', 'Installed Capacity [dec]',
            'Hydro', 'Nuclear', 'RES', 'Thermal', 'Central', 'Private', 'State.1',
            'Rooftop Solar Capacity', 'Generation', 'Peak Demand',
@@ -135,7 +135,7 @@ def load_investment_data():
 @st.cache_data
 def load_data():
     # Project Data
-    dummy_data = pd.read_csv("../../data/data_processed.csv")
+    project_data = pd.read_csv("../../data/processed_data/project_data.csv")
     
     # Investment Data
     investment_data, investment_data_india = load_investment_data()
@@ -144,7 +144,7 @@ def load_data():
     with open("../../data/geography/Indian_States.json", "r", encoding="utf-8") as f:
         state_geo = json.load(f)
     # Return Data
-    return dummy_data, investment_data, investment_data_india, state_geo
+    return project_data, investment_data, investment_data_india, state_geo
 data, investment_data, investment_data_india, state_geo = load_data()
 
 

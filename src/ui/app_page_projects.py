@@ -29,16 +29,50 @@ import pandas as pd
 # #############################################################################
 
 def generate_filter_pane(i, data):
-    states = st.multiselect("State", data['state'].unique(), default=data['state'].unique(), key=f"state_{i}")
-    types = st.multiselect("Type", data['type'].unique(), default=data['type'].unique(), key=f"type_{i}")
-    techs = st.multiselect("Technology", data['technology'].unique(), default=data['technology'].unique(), key=f"tech_{i}")
-    bifacial = st.radio("Bifacial Modules", ["All", "Yes", "No"], index=0, key=f"bifacial_{i}")
+    with st.expander("Filters", expanded=True):
+        col1, col2, col3, col4, col5 = st.columns(5)
+        with col1:
+            states = st.multiselect(
+                "State", 
+                data['state'].unique(), 
+                default=data['state'].unique(), 
+                key=f"state_{i}"
+            )
+        with col2:
+            types = st.multiselect(
+                "Type", 
+                data['type'].unique(), 
+                default=data['type'].unique(), 
+                key=f"type_{i}"
+            )
+        with col3:
+            techs = st.multiselect(
+                "Technology", 
+                data['technology'].unique(), 
+                default=data['technology'].unique(), 
+                key=f"tech_{i}"
+            )
+        with col4:
+            sources = st.multiselect(
+                "Source", 
+                data['Source'].unique(), 
+                default=data['Source'].unique(), 
+                key=f"source_{i}"
+            )
+        with col5:
+            bifacial = st.radio(
+                "Bifacial Modules", 
+                ["All", "Yes", "No"], 
+                index=0, 
+                key=f"bifacial_{i}"
+            )
 
-    # Filtering must be done outside the columns (so both columns can use the result)
+    # Filtering logic
     filtered = data[
         data['state'].isin(states) &
         data['type'].isin(types) &
-        data['technology'].isin(techs)
+        data['technology'].isin(techs) &
+        data['Source'].isin(sources)
     ]
     if bifacial != "All":
         filtered = filtered[filtered['bifacial'] == (bifacial == "Yes")]

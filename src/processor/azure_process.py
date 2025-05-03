@@ -31,15 +31,6 @@ from geopy.geocoders import Nominatim
 # #############################################################################
 # MAIN
 # #############################################################################
-#"""
-main_df = pd.read_csv("../../data/dummy_data.csv")
-df1 = pd.read_csv("../../data/company_azure_power_projects_processed.csv")
-df2 = pd.read_csv("../../data/company_renew_projects_processed.csv")
-df3 = pd.read_csv("../../data/company_tata_projects_processed.csv")
-main_df = pd.concat([main_df, df1, df2, df3], ignore_index=True)
-main_df.to_csv("../../data/data_processed.csv", index=False)
-sys.exit(1)
-#"""
 
 loc = Nominatim(user_agent="Geopy Library")
 df = pd.read_csv("../../data/raw_data/company_azure_power_projects.csv")
@@ -81,4 +72,4 @@ for idx, row in df.iterrows():
 df = df.drop(columns=["location"])
 df["developer"] = "Azure Power"
 df["source"] = "azure"
-df.to_csv("../../data/company_azure_power_projects_processed.csv", index=False)
+df.to_csv("../../data/processed_data/company_azure_power_projects_processed.csv", index=False)

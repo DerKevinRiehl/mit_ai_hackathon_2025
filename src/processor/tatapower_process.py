@@ -115,13 +115,4 @@ info_df = info_df.rename(
 })
 info_df["developer"] = "TATA Power"
 info_df["source"] = "tata"
-info_df.to_csv("../../data/company_tata_projects_processed.csv", index=False)
-
-# Now merge with dummy_data
-# name,lat,lon,state,capacity,developer,year,
-# type,technology,bifacial,grid,manufacturer,offtake,
-# financing,performance,irradiance,grid_proximity,image_url
-
-#main_df = pd.read_csv("../../data/dummy_data.csv")
-#main_df = pd.concat([info_df, main_df], ignore_index=True)
-#main_df.to_csv("../../data/data_processed.csv", index=False)
+info_df.to_csv("../../data/processed_data/company_tata_projects_processed.csv", index=False)

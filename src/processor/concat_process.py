@@ -17,42 +17,17 @@ This script contains functions for processing of scraped data from Tata Power.
 # #############################################################################
 # IMPORTS
 # #############################################################################
-import os
-import sys
-import re
-import requests
-
 import pandas as pd
 
-from bs4 import BeautifulSoup
-from geopy.geocoders import Nominatim
 
 
 # #############################################################################
 # MAIN
 # #############################################################################
-loc = Nominatim(user_agent="Geopy Library")
-df = pd.read_csv("../../data/raw_data/company_renew_projects.csv")
-df = df[df["types"].isin(["solar", "Solar/Wind"])]
 
-# Now merge with data_processed
-# name,lat,lon,state,capacity,developer,year,
-# type,technology,bifacial,grid,manufacturer,offtake,
-# financing,performance,irradiance,grid_proximity,image_url
-df = df.rename(
-    columns={
-        "title": "name",
-        "location": "state",
-        "category": "type",
-    }
-)
-df["developer"] = "ReNew"
-df["source"] = "renew"
-df["lat"] = pd.NA
-df["lon"] = pd.NA
-
-for idx, row in df.iterrows():
-    getLoc = loc.geocode(row["state"])
-    df.loc[idx, "lat"], df.loc[idx, "lon"] = getLoc.latitude, getLoc.longitude
-
-df.to_csv("../../data/processed_data/company_renew_projects_processed.csv", index=False)
+main_df = pd.read_csv("../../processed_data/data/template_data.csv")
+df1 = pd.read_csv("../../data/processed_data/company_azure_power_projects_processed.csv")
+df2 = pd.read_csv("../../data/processed_data/company_renew_projects_processed.csv")
+df3 = pd.read_csv("../../data/processed_data/company_tata_projects_processed.csv")
+main_df = pd.concat([main_df, df1, df2, df3], ignore_index=True)
+main_df.to_csv("../../data/processed_data/data_processed.csv", index=False)
